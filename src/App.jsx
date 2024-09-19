@@ -54,7 +54,7 @@ export const App = () => {
                     onClick={() => handleChosenProduct(product)}
                     data-cy={isSelected ? 'RemoveButton' : 'AddButton'}
                     type="button"
-                    className={`button ${isSelected ? 'is-info' : ''}`}
+                    className={`button ${isSelected && 'is-info'}`}
                   >
                     {isSelected ? '-' : '+'}
                   </button>
