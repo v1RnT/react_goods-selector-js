@@ -1,6 +1,7 @@
 import 'bulma/css/bulma.css';
 import './App.scss';
 import { useState } from 'react';
+import cn from 'classnames';
 
 export const goods = [
   'Dumplings',
@@ -47,14 +48,14 @@ export const App = () => {
             return (
               <tr
                 data-cy="Good"
-                className={isSelected && 'has-background-success-light'}
+                className={cn({ 'has-background-success-light': isSelected })}
               >
                 <td>
                   <button
                     onClick={() => handleChosenProduct(product)}
                     data-cy={isSelected ? 'RemoveButton' : 'AddButton'}
                     type="button"
-                    className={`button ${isSelected && 'is-info'}`}
+                    className={cn('button', { 'is-info': isSelected })}
                   >
                     {isSelected ? '-' : '+'}
                   </button>
